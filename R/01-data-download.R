@@ -1,8 +1,8 @@
 # 01-data-download.R
 # This script downloads data from the google survey about waste separation,
 # which we did in the RBTL course in FS25
-# Author: Jan Helfenstein
-# Date: 2025-04-01
+# author: Jan Helfenstein
+# date: 2025-04-01
 
 # libraries
 library(googlesheets4)

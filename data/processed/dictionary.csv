@@ -1,0 +1,13 @@
+variable_name,description
+datetime,timestamp when the survey was taken
+weekday,weekday when the survey was taken
+rating,how the participant rates the current state of recycling at eth
+recycler_cat,how often the participant recycles their waste
+materials_recycled,which materials are recycled by the participant
+vehicle,how does the participant bring their waste to the recycling station
+walkable_station,does the participant have a recycling station in walkable distance
+regular_walker,does the participant actually walk to this recycling station in walkable distance to recycle their waste
+disposal_cat,what method does the participant use to dispose their general waste
+bag_size,what trash bag size does the participant prefer
+pet_cat,how does the participant dispose their pet bottle in a tricky situation
+banana_cat,how does the participant dispose their banana peal in a tricky situation
