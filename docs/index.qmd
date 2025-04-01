@@ -41,7 +41,8 @@ ggplot(data = survey_vis,
                      y = rating
                     )
        ) + 
-  geom_point(shape = 2, size = 3)
+  geom_point(shape = 2, size = 3) + 
+  labs(x = "survey timestamp")
 
 ```
 
@@ -55,8 +56,12 @@ ggplot(data = survey_vis,
                      fill = recycling_frequency
                     )
        ) + 
-  geom_bar(width = 0.2)
+  geom_bar(width = 0.2) +
+  labs(title = "Rating of ETH's recycling situation",
+       subtitle = "answers from 7 students",
+       fill = "recycling frequency")
 
+?labs
 ```
 
 The following pie chart visualizes the recycling frequency:
@@ -72,19 +77,9 @@ survey_pie_freq <- survey_vis |>
 # create pie chart
 # had help by perplexity.ai, link:
 # https://www.perplexity.ai/search/how-to-create-a-pie-chart-with-f0XcFVCEQYOZ7Mmn3crgeA
-pie(survey_pie_freq$fraction, labels = survey_pie_freq$recycling_frequency, main = "How often do ETH students recycle their waste? n = 6")
+pie(survey_pie_freq$fraction, labels = survey_pie_freq$recycling_frequency, main = "How often do ETH students recycle their waste? n = 7")
 
 
-# what did not work:
-#  mutate(f_count = count(case_when(recycling_frequency == "always", ...))
-  
-# f_count <- as.data.frame(table(survey_vis$recycling_frequency))
-  
-# mutate(table_freq = table(recycling_frequency))
-
-# mutate(percent_freq = 100*recycling_frequency / sum(recycling_frequency))
-
-#pie(survey_vis$recycling_frequency, main = "Pie Chart on recycling frequeny")
 ```
 
 The following two pie chart visualizes how many people have a walkable station nearby, and how many people walk to a recycling station to recycle their waste.
@@ -95,7 +90,7 @@ survey_pie_walkable <- survey_vis |>
   summarize(n = n(),
             fraction = n()/nrow(survey_vis))
 
-pie(survey_pie_walkable$fraction, labels = survey_pie_walkable$walkable_station, main = "Do ETH students have a recycling station in walkable distance? n = 6")
+pie(survey_pie_walkable$fraction, labels = survey_pie_walkable$walkable_station, main = "Do ETH students have a recycling station in walkable distance? n = 7")
 ```
 
 ```{r}
@@ -111,10 +106,10 @@ survey_pie_walker <- survey_walkable |>
             )
 
 # create pie chart
-pie(survey_pie_walker$fraction, labels = survey_pie_walker$regular_walker, main = "How many of these ETH students walk to the nearby station? n = 4")
+pie(survey_pie_walker$fraction, labels = survey_pie_walker$regular_walker, main = "How many of these ETH students walk to the nearby station? n = 5")
 ```
 
-It is satisfying to see that all students who have a walkable station nearby will walk there to recycle their waste.
+It is satisfying to see that all 5 students who have a walkable station nearby will walk there to recycle their waste.
 
 How many of these selected people are regular recyclers?
 
@@ -127,7 +122,7 @@ survey_pie_freq2 <- survey_walkable |>
             )
   
 # create pie chart
-pie(survey_pie_freq2$fraction, labels = survey_pie_freq2$recycling_frequency, main = "How often do these regular walkers recycle their goods? n = 4")
+pie(survey_pie_freq2$fraction, labels = survey_pie_freq2$recycling_frequency, main = "How often do these regular walkers recycle their goods? n = 5")
 ```
 
 ## Table of the data with gt()
@@ -149,7 +144,7 @@ survey_table_recycler <- survey |>
 survey_table_recycler |> 
   gt() |> 
   tab_header(title = "Rating of recycling at ETH by students, grouped by recycling frequency",
-             subtitle = "Data from 6 students in 2025") |> 
+             subtitle = "Data from 7 students in 2025") |> 
   cols_label(recycler_cat = "recycling_frequency",
              mean = "mean_rating")
 
@@ -168,8 +163,27 @@ survey_table_recycler |>
   kable()
 ```
 
-@tbl-survey-recycler shows that people who always recycle their waste are rating the recycling situation at ETH higher than others. People who recycle "most of the times" rate the recycling situation 1 point lower, at 3 stars.
+@tbl-survey-recycler shows that people who always recycle their waste are rating the recycling situation at ETH higher than others. People who recycle less often tend to rate the recycling situation lower, at two or three stars.
 
 This is also visualized in @fig-recycling\
-\
+
+## Saving the dataframes used for visualization
+
+saving it in data/final folder\
+
+```{r}
+# dataframe for point plot
+write_csv(survey_vis, here::here("data/final/survey_vis.csv"))
+
+# dataframe for pie chart
+write_csv(survey_pie_freq, here::here("data/final/survey_pie_freq.csv"))
+write_csv(survey_pie_walkable, here::here("data/final/survey_pie_walkable.csv"))
+write_csv(survey_pie_walker, here::here("data/final/survey_pie_walker.csv"))
+write_csv(survey_pie_freq2, here::here("data/final/survey_pie_freq2.csv"))
+
+# dataframe for table
+write_csv(survey_table_recycler, here::here("data/final/survey_table_recycler.csv"))
+
+```
+
 \

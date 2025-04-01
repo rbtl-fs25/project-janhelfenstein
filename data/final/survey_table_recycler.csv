@@ -1,0 +1,4 @@
+recycler_cat,count,mean,sd,min,max
+always,2,4,0,4,4
+mostly,3,3,0,3,3
+sometimes,2,2.5,0.7071067811865476,2,3
