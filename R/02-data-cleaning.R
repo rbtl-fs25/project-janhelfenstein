@@ -125,6 +125,10 @@ survey_logic <- survey_order |>
 
 survey_processed <- survey_logic
 
+# TO DO ---------------
+# write code to separate data in materials_recycled. 
+# Find out how to separate answers that were selected in multiple choice questions. 
+
 # write csv and rds in processed
 write_csv(survey_processed, "data/processed/survey-data-processed.csv")
 write_rds(survey_processed, "data/processed/survey-data-processed.rds")

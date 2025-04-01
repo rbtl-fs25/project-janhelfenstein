@@ -1,0 +1,8 @@
+datetime,weekday,rating,recycler_cat,materials_recycled,vehicle,walkable_station,regular_walker,disposal_cat,bag_size,pet_cat,banana_cat
+2025-03-20T15:25:53Z,Thursday,4,always,"Paper and Cardboard, Metals (like Alu), Plastics (also PET), Electronics and Batteries, Organic Waste, Glass",Walking,TRUE,TRUE,fee-bag,1,take-home,find-recycling
+2025-03-20T15:28:29Z,Thursday,3,mostly,"Paper and Cardboard, Metals (like Alu), Plastics (also PET), Electronics and Batteries, Organic Waste, Glass, light bulbs",Walking,TRUE,TRUE,non-fee-bag,1,find-recycling,on-full-bin
+2025-03-20T17:11:21Z,Thursday,3,mostly,"Paper and Cardboard, Metals (like Alu), Plastics (also PET), Electronics and Batteries, Glass",By car,FALSE,FALSE,fee-bag,1,find-recycling,find-recycling
+2025-03-21T10:14:21Z,Friday,4,always,"Paper and Cardboard, Metals (like Alu), Plastics (also PET), Organic Waste, Glass",Walking,TRUE,TRUE,fee-bag,1,take-home,on-full-bin
+2025-03-24T15:31:58Z,Monday,3,sometimes,"Paper and Cardboard, Metals (like Alu), Plastics (also PET), Electronics and Batteries, Organic Waste, Glass",Walking,TRUE,TRUE,hole,NA,on-full-bin,take-home
+2025-03-24T17:09:19Z,Monday,2,sometimes,"Paper and Cardboard, Metals (like Alu), Plastics (also PET)",By public transport,FALSE,FALSE,public-bin,NA,on-full-bin,bushes
+2025-03-26T09:46:15Z,Wednesday,3,mostly,"Paper and Cardboard, Metals (like Alu), Plastics (also PET), Electronics and Batteries, Organic Waste, Glass",Walking,TRUE,TRUE,fee-bag,1,take-home,on-full-bin
